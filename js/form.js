@@ -3,7 +3,7 @@ export function initForm() {
     const form = document.getElementById('orderForm');
     if (!form) return;
 
-    const ADMIN_WA_NUMBER = "6281234567890"; // Ganti dengan nomor asli
+    const ADMIN_WA_NUMBER = "6287775564462"; // Ganti dengan nomor asli
 
     // Handle visual card selection and order summary
     const radios = document.querySelectorAll('input[name="paket"]');
