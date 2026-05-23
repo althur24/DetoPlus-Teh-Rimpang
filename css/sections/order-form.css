@@ -269,4 +269,13 @@
   letter-spacing: 1px;
 }
 
+/* Loading spinner for submit button */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
+.btn-whatsapp:disabled {
+  cursor: wait;
+  pointer-events: none;
+}

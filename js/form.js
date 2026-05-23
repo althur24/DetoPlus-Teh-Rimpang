@@ -92,11 +92,38 @@ Tolong dibantu proses pengirimannya ya kak, terima kasih!`;
         const encodedMessage = encodeURIComponent(message);
         const waLink = `https://wa.me/${ADMIN_WA_NUMBER}?text=${encodedMessage}`;
         
-        // Trigger Meta Pixel Custom Lead Event
-        if (typeof fbq === 'function') {
-            fbq('trackCustom', 'Lead Deto');
+        // Disable button to prevent double-click
+        const submitBtn = document.getElementById('submitBtn');
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.7';
+            submitBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="white" style="animation: spin 1s linear infinite; margin-right: 8px;"><path d="M12 2a10 10 0 1 0 10 10h-2a8 8 0 1 1-8-8V2z"/></svg> Mengirim...';
         }
 
-        window.open(waLink, '_blank');
+        // Trigger Meta Pixel Custom Lead Event with delay for pixel to fire
+        const openWhatsApp = () => {
+            window.open(waLink, '_blank');
+            // Re-enable button after redirect
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = '1';
+                submitBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 17.098c-.244.688-.958 1.264-1.682 1.431-.497.115-1.146.207-3.334-.717-2.8-1.182-4.598-4.03-4.738-4.218-.14-.188-1.134-1.51-1.134-2.879 0-1.37.717-2.043.972-2.322.255-.28.557-.35.743-.35.186 0 .371.002.534.01.171.007.401-.065.627.479.233.561.79 1.931.86 2.07.07.14.116.303.023.489-.093.186-.14.303-.28.466-.14.163-.294.363-.42.489-.14.14-.286.29-.123.569.163.28.726 1.197 1.558 1.94 1.069.953 1.97 1.248 2.25 1.388.28.14.442.116.605-.07.163-.186.698-.814.884-1.094.186-.28.372-.233.627-.14.255.093 1.62.764 1.898.904.28.14.465.21.534.326.07.116.07.675-.174 1.323z"/></svg> Pesan lewat Whatsapp';
+            }
+        };
+
+        try {
+            if (typeof fbq === 'function') {
+                fbq('trackCustom', 'Lead Deto');
+                // Give pixel 500ms to fire before redirecting
+                setTimeout(openWhatsApp, 500);
+            } else {
+                // Pixel not loaded, redirect immediately
+                openWhatsApp();
+            }
+        } catch (err) {
+            // Failsafe: always open WhatsApp even if pixel errors
+            console.warn('Meta Pixel error:', err);
+            openWhatsApp();
+        }
     });
 }
