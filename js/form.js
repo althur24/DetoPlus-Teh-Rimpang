@@ -67,7 +67,37 @@ export function initForm() {
         }
 
         if (!confirmation.checked) {
-            alert("⚠️ PEMBERITAHUAN:\nMohon centang kotak persetujuan bahwa data yang diisi sudah benar sebelum mengirim pesanan.");
+            // Show custom inline warning instead of browser alert
+            const confirmGroup = confirmation.closest('.form-confirmation');
+            confirmGroup.style.borderColor = '#e63946';
+            confirmGroup.style.backgroundColor = 'rgba(230, 57, 70, 0.06)';
+            
+            // Create or update toast notification
+            let toast = document.getElementById('confirmToast');
+            if (!toast) {
+                toast = document.createElement('div');
+                toast.id = 'confirmToast';
+                toast.style.cssText = 'margin-top: -16px; margin-bottom: 16px; padding: 12px 16px; background: linear-gradient(135deg, #e63946, #d62839); color: #fff; border-radius: 8px; font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 8px; animation: slideDown 0.3s ease; box-shadow: 0 4px 12px rgba(230,57,70,0.25);';
+                confirmGroup.parentNode.insertBefore(toast, confirmGroup.nextSibling);
+            }
+            toast.innerHTML = '⚠️ Mohon centang kotak persetujuan bahwa data yang diisi sudah benar.';
+            toast.style.display = 'flex';
+            
+            // Auto-hide after 4 seconds
+            setTimeout(() => {
+                toast.style.display = 'none';
+                confirmGroup.style.borderColor = 'rgba(56, 176, 0, 0.3)';
+                confirmGroup.style.backgroundColor = 'rgba(56, 176, 0, 0.05)';
+            }, 4000);
+            
+            // Reset on check
+            confirmation.addEventListener('change', function handler() {
+                toast.style.display = 'none';
+                confirmGroup.style.borderColor = 'rgba(56, 176, 0, 0.3)';
+                confirmGroup.style.backgroundColor = 'rgba(56, 176, 0, 0.05)';
+                confirmation.removeEventListener('change', handler);
+            });
+            
             isValid = false;
         }
 
