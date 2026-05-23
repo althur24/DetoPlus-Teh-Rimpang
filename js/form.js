@@ -142,17 +142,25 @@ Tolong dibantu proses pengirimannya ya kak, terima kasih!`;
         };
 
         try {
+            // Trigger Meta Pixel Lead Event
             if (typeof fbq === 'function') {
                 fbq('trackCustom', 'Lead Deto');
-                // Give pixel 500ms to fire before redirecting
-                setTimeout(openWhatsApp, 500);
-            } else {
-                // Pixel not loaded, redirect immediately
-                openWhatsApp();
             }
+
+            // Trigger Google Analytics Lead Event
+            if (typeof gtag === 'function') {
+                gtag('event', 'Lead_Deto', {
+                    'event_category': 'conversion',
+                    'event_label': paketName,
+                    'value': paketPrice
+                });
+            }
+
+            // Give trackers 500ms to fire before redirecting
+            setTimeout(openWhatsApp, 500);
         } catch (err) {
-            // Failsafe: always open WhatsApp even if pixel errors
-            console.warn('Meta Pixel error:', err);
+            // Failsafe: always open WhatsApp even if trackers error
+            console.warn('Tracking error:', err);
             openWhatsApp();
         }
     });
