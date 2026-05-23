@@ -92,6 +92,11 @@ Tolong dibantu proses pengirimannya ya kak, terima kasih!`;
         const encodedMessage = encodeURIComponent(message);
         const waLink = `https://wa.me/${ADMIN_WA_NUMBER}?text=${encodedMessage}`;
         
+        // Trigger Meta Pixel Custom Lead Event
+        if (typeof fbq === 'function') {
+            fbq('trackCustom', 'Lead Deto');
+        }
+
         window.open(waLink, '_blank');
     });
 }
