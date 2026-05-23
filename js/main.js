@@ -17,7 +17,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Initialize Evergreen Timer
     initTimer();
 
-    // 3. Initialize Order Form
-    initForm();
-
 });
