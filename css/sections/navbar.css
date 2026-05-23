@@ -32,7 +32,7 @@
   object-fit: contain;
   margin: -20px 0;
   display: block;
-  filter: brightness(0);
+  filter: brightness(0) saturate(100%) invert(52%) sepia(47%) saturate(532%) hue-rotate(127deg) brightness(95%) contrast(88%);
 }
 
 @media (min-width: 992px) {
