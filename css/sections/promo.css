@@ -129,6 +129,15 @@
   margin-bottom: var(--spacing-4);
 }
 
+.pricing-card__image {
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+  margin: 0 auto var(--spacing-4);
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
 .pricing-card__price {
   font-size: var(--fs-4xl);
   font-weight: 700;
