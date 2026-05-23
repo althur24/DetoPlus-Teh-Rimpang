@@ -1,0 +1,57 @@
+/* problem.css */
+.problem {
+  background-color: var(--clr-white);
+}
+
+.problem__split {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .problem__split {
+    flex-direction: row;
+    gap: var(--spacing-10);
+  }
+  
+  .problem__image-wrapper,
+  .problem__content {
+    flex: 1;
+  }
+}
+
+.problem__headline {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: var(--clr-text-main);
+  margin-bottom: var(--spacing-4);
+  line-height: 1.3;
+}
+
+@media (min-width: 768px) {
+  .problem__headline {
+    font-size: var(--fs-2xl);
+  }
+}
+
+.problem__description {
+  font-size: var(--fs-base);
+  color: var(--clr-text-light);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .problem__description {
+    font-size: var(--fs-lg);
+  }
+}
+
+.problem__pain-point {
+  color: #e63946; /* Red emphasis */
+  font-weight: 800;
+  font-size: 1.15em; /* Make the pain point stand out more */
+}

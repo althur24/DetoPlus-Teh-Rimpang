@@ -1,0 +1,154 @@
+/* footer.css */
+.footer {
+  background-color: var(--clr-herbal);
+  color: var(--clr-white);
+  padding-block: var(--spacing-12) var(--spacing-8);
+  font-family: var(--ff-body);
+}
+
+.footer__top {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-10);
+  margin-bottom: var(--spacing-8);
+}
+
+@media (min-width: 768px) {
+  .footer__top {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.footer__brand {
+  flex: 1;
+  max-width: 600px;
+  text-align: center;
+  margin-inline: auto;
+}
+
+.footer__logo {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-2xl);
+  font-weight: 800;
+  color: var(--clr-white);
+  margin-bottom: var(--spacing-4);
+  letter-spacing: -0.5px;
+}
+
+.footer__logo .highlight {
+  color: var(--clr-primary); /* Uses main theme green instead of gold */
+}
+
+.footer__description {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  font-size: var(--fs-md);
+}
+
+.footer__wa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--clr-whatsapp);
+  color: var(--clr-white);
+  padding: 12px 24px;
+  border-radius: var(--br-full);
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.footer__wa-btn:hover {
+  background-color: var(--clr-whatsapp-hover);
+  transform: translateY(-2px);
+  color: var(--clr-white);
+}
+
+.footer__divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  margin-bottom: var(--spacing-8);
+}
+
+.footer__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-6);
+}
+
+.footer__disclaimer {
+  font-size: var(--fs-sm);
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 700px;
+  line-height: 1.5;
+}
+
+.footer__disclaimer strong {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer__secure-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.footer__secure {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--clr-surface-light);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  background-color: rgba(255,255,255,0.1);
+  padding: 6px 16px;
+  border-radius: var(--br-full);
+}
+
+.footer__copyright {
+  font-size: var(--fs-xs);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Floating WhatsApp Button */
+.floating-wa {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: var(--clr-whatsapp);
+  color: var(--clr-white);
+  border-radius: var(--br-full);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-4);
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+  z-index: 99;
+  transition: transform var(--transition-fast);
+  text-decoration: none;
+  font-weight: 600;
+  animation: pulse-wa 2s infinite;
+}
+
+.floating-wa:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+@media (max-width: 576px) {
+  .floating-wa {
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
+@keyframes pulse-wa {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}

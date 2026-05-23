@@ -1,0 +1,19 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Gemini
+.gemini/
+ASSETS TEH RAMPING/Badge.png
+ASSETS TEH RAMPING/LOGO.png
+ASSETS TEH RAMPING/TESTIMONI REVIEW/*.png
+ASSETS TEH RAMPING/gambar produk 1.jpeg
+ASSETS TEH RAMPING/perutnya_gaboleh_keliatann_2K_202605230154.jpeg
+assets/images/hero.png
+assets/images/logo.png
+assets/images/testimonials/testimoni-grid-1.png
+assets/images/testimonials/testimoni-grid-2.png

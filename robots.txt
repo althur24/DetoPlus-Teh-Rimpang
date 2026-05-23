@@ -1,0 +1,8 @@
+# robots.txt — Teh Rimpang DetoPlus+
+User-agent: *
+Allow: /
+Disallow: /js/
+Disallow: /css/
+
+# Sitemap
+Sitemap: https://tehrimpangdetoplus.com/sitemap.xml

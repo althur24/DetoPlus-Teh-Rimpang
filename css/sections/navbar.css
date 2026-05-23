@@ -1,0 +1,46 @@
+/* navbar.css */
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--clr-white);
+  box-shadow: var(--shadow-sm);
+  height: 64px; /* Fixed height */
+  display: flex;
+  align-items: center;
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Logo */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  z-index: 1001;
+  transform: translateY(6px); /* Memperbaiki posisi logo yang agak naik ke atas */
+}
+
+.navbar__logo-img {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+  margin: -20px 0;
+  display: block;
+  filter: brightness(0);
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    height: 72px;
+  }
+  .navbar__logo-img {
+    height: 110px;
+    margin: -24px 0;
+  }
+}

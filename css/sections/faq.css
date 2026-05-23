@@ -1,0 +1,107 @@
+/* faq.css */
+.faq {
+  background-color: var(--clr-white);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.faq-item {
+  background-color: var(--clr-white);
+  border-radius: var(--br-lg);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+  border: 1px solid transparent;
+}
+
+.faq-item:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+  border-color: rgba(42, 157, 143, 0.1);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-5) var(--spacing-6);
+  background-color: transparent;
+  border: none;
+  font-weight: 700;
+  font-size: var(--fs-lg);
+  color: var(--clr-herbal);
+  cursor: pointer;
+  text-align: left;
+  transition: color var(--transition-fast), background-color var(--transition-normal);
+}
+
+.faq-item.active .faq-question {
+  color: var(--clr-primary-dark);
+  background-color: rgba(224, 242, 239, 0.5); /* Very light mint on active */
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  background-color: var(--clr-surface-light);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform var(--transition-normal), background-color var(--transition-fast);
+  margin-left: var(--spacing-4);
+}
+
+.faq-icon::before,
+.faq-icon::after {
+  content: '';
+  position: absolute;
+  background-color: var(--clr-primary);
+  border-radius: 2px;
+  transition: transform var(--transition-normal), background-color var(--transition-fast);
+}
+
+.faq-icon::before {
+  width: 14px;
+  height: 2px;
+}
+
+.faq-icon::after {
+  width: 2px;
+  height: 14px;
+}
+
+.faq-item.active .faq-icon {
+  background-color: var(--clr-primary);
+  transform: rotate(180deg);
+}
+
+.faq-item.active .faq-icon::before,
+.faq-item.active .faq-icon::after {
+  background-color: var(--clr-white);
+}
+
+.faq-item.active .faq-icon::after {
+  transform: rotate(90deg);
+  opacity: 0;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-normal) ease-out;
+  background-color: rgba(224, 242, 239, 0.3); /* Subtle tint linking question to answer */
+}
+
+.faq-answer__inner {
+  padding: 0 var(--spacing-6) var(--spacing-6);
+  color: var(--clr-text-main);
+  line-height: 1.6;
+}

@@ -1,0 +1,26 @@
+/* solution.css */
+.solution {
+  background-color: #e6f7f5; /* Very light, soft teal background */
+  padding: var(--spacing-8) 0;
+  text-align: center;
+}
+
+.solution__banner-text {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  color: var(--clr-text-main);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .solution__banner-text {
+    font-size: var(--fs-xl);
+  }
+}
+
+.solution__banner-text .highlight {
+  color: var(--clr-primary);
+  font-weight: 800;
+}

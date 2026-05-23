@@ -1,0 +1,72 @@
+/* variables.css */
+:root {
+  /* Colors */
+  --clr-primary: #2A9D8F; /* Teal Green */
+  --clr-primary-dark: #21867a;
+  --clr-accent: #2A9D8F; /* Now matches primary teal */
+  --clr-accent-hover: #21867a;
+  --clr-background: #F0F8F6; /* Richer faint green-white */
+  --clr-surface-light: #E0F2EF; /* Minty fresh */
+  --clr-surface-darker: #CCECE6; /* Richer mint */
+  --clr-herbal: #264653; /* Herbal Green Accent */
+  --clr-white: #FFFFFF;
+  --clr-text-main: #333333;
+  --clr-text-light: #666666;
+  --clr-whatsapp: #25D366;
+  --clr-whatsapp-hover: #1EBE5D;
+  --clr-border: #e2e8f0;
+
+  /* Typography */
+  --ff-heading: 'Poppins', sans-serif;
+  --ff-body: 'DM Sans', sans-serif;
+
+  /* Font Sizes (Mobile First) */
+  --fs-xs: 0.75rem;   /* 12px */
+  --fs-sm: 0.875rem;  /* 14px */
+  --fs-base: 1rem;    /* 16px */
+  --fs-lg: 1.125rem;  /* 18px */
+  --fs-xl: 1.125rem;  /* Was 20px */
+  --fs-2xl: 1.25rem;  /* Was 24px */
+  --fs-3xl: 1.5rem;   /* Was 32px - Section Titles */
+  --fs-4xl: 1.875rem; /* Was 40px - Hero Headline */
+
+  /* Spacing */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
+
+  /* Border Radius */
+  --br-sm: 4px;
+  --br-md: 8px;
+  --br-lg: 16px;
+  --br-xl: 24px;
+  --br-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 300ms ease-in-out;
+}
+
+/* Desktop Overrides for Typography */
+@media (min-width: 768px) {
+  :root {
+    --fs-xl: 1.25rem;   /* 20px */
+    --fs-2xl: 1.5rem;   /* 24px */
+    --fs-3xl: 2rem;     /* 32px */
+    --fs-4xl: 2.5rem;   /* 40px */
+  }
+}
