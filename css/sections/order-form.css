@@ -145,6 +145,16 @@
   box-shadow: 0 4px 12px rgba(42, 157, 143, 0.15);
 }
 
+.package-card__image {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  margin-left: var(--spacing-3);
+  margin-right: var(--spacing-2);
+  border-radius: var(--br-sm);
+  mix-blend-mode: multiply;
+}
+
 .package-card__check {
   width: 24px;
   height: 24px;
