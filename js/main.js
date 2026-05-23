@@ -17,4 +17,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Initialize Evergreen Timer
     initTimer();
 
+    // 5. Track 10-second engagement
+    setTimeout(() => {
+        try {
+            if (typeof fbq === 'function') {
+                fbq('trackCustom', 'Stay10s_Deto');
+            }
+            if (typeof gtag === 'function') {
+                gtag('event', 'Stay10s_Deto', {
+                    'event_category': 'engagement',
+                    'event_label': 'User stayed 10 seconds'
+                });
+            }
+        } catch (err) {
+            console.warn('Stay10s tracking error:', err);
+        }
+    }, 10000);
+
 });
