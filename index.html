@@ -158,6 +158,7 @@
     <link rel="stylesheet" href="css/sections/comparison.css">
     <link rel="stylesheet" href="css/sections/promo.css">
     <link rel="stylesheet" href="css/sections/final-close.css">
+    <link rel="stylesheet" href="css/sections/price-anchor.css">
     <link rel="stylesheet" href="css/sections/order-form.css">
     <link rel="stylesheet" href="css/sections/faq.css">
     <link rel="stylesheet" href="css/sections/footer.css">
@@ -460,6 +461,7 @@
                     <img src="assets/images/optimized/gambar-produk-1.jpg" alt="Promo Paket 1 Box Teh Rimpang" class="pricing-card__image" loading="lazy">
                     <div class="pricing-card__price">Rp68.000</div>
                     <p class="pricing-card__bonus" style="text-decoration: line-through; color: #e63946; font-weight: 600;">Rp99.000</p>
+                    <p class="pricing-card__detail" style="font-size: 0.95rem; color: var(--clr-text-light); margin-bottom: 1rem; font-weight: 500;">Isi 20 Kantong<br><span style="color: var(--clr-primary); font-weight: 700;">(Cuma Rp3.400 / sajian)</span></p>
                     <a href="#order-form" class="btn btn-secondary" onclick="document.querySelector('input[name=\'paket\'][value=\'1box\']').click()">Saya Mau Promonya!</a>
                 </div>
                 
@@ -470,6 +472,7 @@
                     <img src="assets/images/optimized/2-pouch.jpg" alt="Promo Paket 2 Box Teh Rimpang" class="pricing-card__image" loading="lazy">
                     <div class="pricing-card__price">Rp99.000</div>
                     <p class="pricing-card__bonus" style="text-decoration: line-through; color: #e63946; font-weight: 600;">Rp136.000</p>
+                    <p class="pricing-card__detail" style="font-size: 0.95rem; color: var(--clr-text-light); margin-bottom: 1rem; font-weight: 500;">Isi 40 Kantong<br><span style="color: var(--clr-primary); font-weight: 700;">(Cuma Rp2.475 / sajian)</span></p>
                     <a href="#order-form" class="btn btn-primary" onclick="document.querySelector('input[name=\'paket\'][value=\'2box\']').click()">Saya Mau Promonya!</a>
                 </div>
 
@@ -480,13 +483,31 @@
                     <img src="assets/images/optimized/3-pouch.jpg" alt="Promo Paket 3 Box Teh Rimpang" class="pricing-card__image" loading="lazy">
                     <div class="pricing-card__price">Rp129.000</div>
                     <p class="pricing-card__bonus" style="text-decoration: line-through; color: #e63946; font-weight: 600;">Rp204.000</p>
+                    <p class="pricing-card__detail" style="font-size: 0.95rem; color: var(--clr-text-light); margin-bottom: 1rem; font-weight: 500;">Isi 60 Kantong<br><span style="color: var(--clr-primary); font-weight: 700;">(Cuma Rp2.150 / sajian)</span></p>
                     <a href="#order-form" class="btn btn-secondary" onclick="document.querySelector('input[name=\'paket\'][value=\'3box\']').click()">Saya Mau Promonya!</a>
                 </div>
             </div>
         </div>
     </section>
 
-
+    <!-- Price Anchor Section -->
+    <section class="price-anchor-section">
+        <div class="container container-sm">
+            <div class="price-anchor animate-in">
+                <div class="price-anchor__highlight-box">
+                    <span class="price-anchor__icon">☕</span>
+                    <div class="price-anchor__text">
+                        <div class="price-anchor__text-top">Per sajiannya mulai dari</div>
+                        <div class="price-anchor__text-bottom">Rp 3.400-an aja!</div>
+                    </div>
+                </div>
+                <h2 class="price-anchor__title">Setara Harga <span class="highlight">Es Teh Pinggir Jalan!</span></h2>
+                <p class="price-anchor__desc" style="margin-bottom: 0;">
+                    Daripada uangnya habis buat beli minuman manis yang bikin lemak numpuk, mending dipakai buat rutinitas <strong>detox usus</strong> agar perut cepat rata dan tubuh ideal. 
+                </p>
+            </div>
+        </div>
+    </section>
 
     <!-- 12. Order Form -->
     <section class="order-form section-padding" id="order-form">
